@@ -1,3 +1,5 @@
+Apprenez à utiliser l'addon via ma <a href="https://www.udemy.com/course/modelisation-impression-3d-avec-blender-tous-niveaux/?couponCode=LETSLEARNNOW">Formation modelisation 3D </a>
+
 I publish my very first Blender Addon through GitHub.
 
 There are 3 branches to get more infos if you're completely new to blender and you need more detail about the settings.
