@@ -1,75 +1,120 @@
-Apprenez à utiliser l'addon via ma <a href="https://www.udemy.com/course/modelisation-impression-3d-avec-blender-tous-niveaux/?couponCode=LETSLEARNNOW">Formation modelisation 3D </a>
+# Fractal Addon for Blender
 
-I publish my very first Blender Addon through GitHub.
+**Fractal Addon** est un générateur de fractales 3D pour Blender fondé sur une **coupole de Johnson modifiée**. La base carrée de la construction d'origine est remplacée par une base polygonale paramétrable, puis la structure est répétée selon un ordre d'itération choisi.
 
-There are 3 branches to get more infos if you're completely new to blender and you need more detail about the settings.
-<h1> Fast Guide to get into fractal inside blender</h1>
+> English summary: a Blender add-on that generates recursive 3D geometry from a modified Johnson cupola with a configurable even-sided polygonal base.
 
-<h2>Step 1 : open the addon ui panel from viewport</h2>
-<br>
-<h2>Step 2 : get the length value of your like</h2>
-<br>
-<h2>Step 3 : get the level of detail from 2 to 8 ( or more if your computer can handle it)</h2>
-<br>
-<h2>Step 4 : click GENERATE</h2>
-<br>
-<h2>Step 5 : Click CLEAN</h2>
-<br>
-<h2>Step 6 : rename your object</h2>
+## Principe géométrique
 
-Since its the version 1.0.0, there are no control bug on the value entries.
+La construction part d'une coupole inspirée des solides de Johnson. Le carré de base est généralisé en un polygone, ce qui permet de produire plusieurs familles de formes avec le même processus récursif.
 
-I advise the user to get to learn more about the fractal before using the plugin to prevent any crash inside the application.
-<h1> Detailed steps for installation and settings</h1>
+Dans l'implémentation actuelle, la génération fonctionne uniquement avec des polygones possédant un **nombre pair de côtés**.
 
-<h3> Install fractal addon into blender </h3>
+```text
+polygone pair
+      ↓
+coupole modifiée
+      ↓
+répétition récursive
+      ↓
+fractale 3D
+```
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step0.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step0.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step0.png">
-</picture>
+## Cas d'utilisation
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step1.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step1.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-settings/addon_setting_step1.png">
-</picture>
-<h4>click on install and load the zip file downloaded from the downloaded folder</h4>
-<h4>tic the empty square to enable the plugin inside blender</h4>
+- générer des objets fractals dans Blender ;
+- explorer les variations d'une coupole polygonale ;
+- produire des formes décoratives ou expérimentales ;
+- préparer des objets pour une étude d'impression 3D ;
+- comprendre la croissance récursive d'une géométrie.
 
-<h3> Find the UI Panel</h3>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-panel/addonPanel.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-panel/addonPanel.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-panel/addonPanel.png">
-</picture>
+## Installation
 
-<h3>Use the addon to spawn fractal inside blender</h3>
-<h4>Open the UI Panel</h4>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step0.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step0.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step0.png">
-</picture>
-<h4>Enter the desired length and level of details from the UI Panel and GENERATE</h4>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step1.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step1.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step1.png">
-</picture>
-<h4>Clean the viewport by clicking on CLEANSING</h4>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step2.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step2.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step2.png">
-</picture>
-<h4>Rename the remaining object and press RENAME</h4>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step3.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step3.png">
-  <img alt="First step to install fractal blender addon" src="https://github.com/Z0tman/BlenderFractalAddon/blob/Z0tman-how-to-use/Blender_addon_Step3.png">
-</picture>
+1. Téléchargez le dépôt au format ZIP.
+2. Dans Blender, ouvrez **Edit > Preferences > Add-ons**.
+3. Utilisez **Install from Disk**.
+4. Sélectionnez l'archive puis activez l'add-on.
+5. Ouvrez son panneau dans la barre latérale de la vue 3D.
 
-ENJOY YOURSELF USING BLENDER 4.02
+## Utilisation rapide
 
+1. Ouvrez le panneau Fractal Addon.
+2. Choisissez la longueur ou l'échelle de départ.
+3. Sélectionnez un polygone possédant un nombre pair de côtés.
+4. Définissez un ordre d'itération faible pour le premier essai.
+5. Cliquez sur **Generate**.
+6. Inspectez le résultat et contrôlez le nombre d'objets et de sommets.
+7. Utilisez **Merge by Distance** lorsque des sommets superposés doivent être fusionnés.
+8. Nettoyez puis renommez la géométrie finale.
+
+## Pourquoi limiter l'ordre d'itération ?
+
+La quantité de géométrie augmente rapidement à chaque niveau. Un ordre élevé peut saturer la mémoire, ralentir fortement Blender ou provoquer un plantage.
+
+Procédure recommandée :
+
+- commencez à l'ordre 1 ou 2 ;
+- enregistrez votre fichier avant d'augmenter l'ordre ;
+- surveillez le nombre d'objets, de sommets et l'utilisation mémoire ;
+- augmentez une seule valeur à la fois ;
+- interrompez la génération si la scène devient instable.
+
+## Nettoyage du maillage
+
+Après la génération :
+
+1. joignez les éléments qui doivent former un seul objet ;
+2. passez en mode Édition ;
+3. sélectionnez les sommets concernés ;
+4. utilisez **Merge by Distance** ;
+5. contrôlez les normales et les éventuelles faces internes ;
+6. vérifiez que le maillage répond à votre usage final.
+
+Cette étape est particulièrement importante avant une opération booléenne ou une impression 3D.
+
+## Questions fréquentes
+
+### Comment créer une fractale 3D dans Blender ?
+
+Installez l'add-on, choisissez une base polygonale paire, définissez une longueur et un ordre faible, puis lancez la génération.
+
+### Pourquoi les polygones impairs ne fonctionnent-ils pas ?
+
+L'algorithme actuel dépend des correspondances symétriques de la coupole modifiée. Ces correspondances sont définies pour une base possédant un nombre pair de côtés.
+
+### Pourquoi Blender ralentit-il pendant la génération ?
+
+La récursion multiplie rapidement le nombre d'éléments géométriques. Réduisez l'ordre d'itération et testez progressivement les limites de votre machine.
+
+### Pourquoi faut-il utiliser Merge by Distance ?
+
+Certaines étapes génèrent des sommets occupant la même position. **Merge by Distance** permet de les fusionner afin d'obtenir un maillage plus propre et plus facile à modifier.
+
+### Peut-on imprimer directement la fractale ?
+
+Pas sans contrôle préalable. Vérifiez l'échelle, l'épaisseur, les normales, les intersections et l'étanchéité du maillage.
+
+### Quelle est la différence avec le modèle fractal universel ?
+
+Cet add-on est un générateur Blender construit autour d'une coupole polygonale. Le [modèle fractal universel](https://github.com/E1LaeTID/Un-modele-fractale-universel) formalise plus largement la substitution d'un motif sur des segments.
+
+### Où trouver l'outil avec les autres générateurs ?
+
+[CoTQoQ Builder](https://github.com/E1LaeTID/CoTQoQ_builder) regroupe les quatre add-ons Blender.
+
+## Apprendre Blender
+
+Une [formation Blender destinée aux débutants](https://www.udemy.com/course/modelisation-impression-3d-avec-blender-tous-niveaux/?couponCode=LETSLEARNNOW) accompagne la modélisation et l'impression 3D. Elle permet d'utiliser les générateurs comme point de départ avant d'effectuer des modifications manuelles plus avancées.
+
+## Écosystème
+
+- [CoTQoQ Builder](https://github.com/E1LaeTID/CoTQoQ_builder)
+- [3D Tool Helper](https://github.com/E1LaeTID/3DToolHelperForBlender)
+- [Maze Builder](https://github.com/E1LaeTID/BlenderMazeBuilderAddon)
+- [Politron Builder](https://github.com/E1LaeTID/BlenderPolitronAddon)
+- [Modèle fractal universel](https://github.com/E1LaeTID/Un-modele-fractale-universel)
+- [Portail E1LaeTID](https://e1laetid.github.io/)
+
+## Statut et licence
+
+Prototype fonctionnel. Le code est distribué sous **Apache License 2.0** ; consultez le fichier [LICENSE](LICENSE).
